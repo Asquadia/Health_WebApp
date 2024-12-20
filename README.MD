@@ -17,14 +17,14 @@ The application is containerized using Docker for easy deployment and management
 
 The `Makefile` provides the following targets to manage the project:
 
-### `init`
+### `build`
 
 This target initializes the project by building the Docker image and creating a virtual environment inside the container with all necessary dependencies installed.
 
 **How to use:**
 
 ```bash
-make init
+make build
 ```
 
 ### `run_all`
@@ -87,7 +87,7 @@ make test
 2. **Initialize the project:**
 
     ```bash
-    make init
+    make build
     ```
 
 3. **Run the application:**
