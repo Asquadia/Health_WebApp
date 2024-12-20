@@ -29,6 +29,14 @@ jobs:
       
       - name: Install dependencies
         run: pip install -r requirements.txt
+
+      # Copy the file to root folder to launch the app with the ressources
+      - name: Copy services to the app directory
+        run: |
+                cp -r backend/* .
+                cp -r bmi_service/* .
+                cp -r bmr_service/* .
+                cp -r frontend/* .
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
@@ -75,4 +83,5 @@ jobs:
         with:
           app-name: 'HealthWebApp'
           slot-name: 'Production'
+          startup-command: 'gunicorn backend.app:app' # to start the app the other option is to launch the start.sh
           
