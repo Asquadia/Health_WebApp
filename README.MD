@@ -3,8 +3,8 @@
 This project is a microservice application that provides BMI and BMR calculation services. It consists of three main components and a web interface:
 
 *   **Backend:** A Flask application that serves as the main entry point and handles routing requests to the appropriate service.
-*   **BMI Service:** A Flask application that calculates BMI.
-*   **BMR Service:** A Flask application that calculates BMR.
+*   **BMI Service:** a service that let calculates BMI.
+*   **BMR Service:** a service that let calculates BMR.
 *   **Frontend:** A simple HTML/JavaScript frontend that allows users to interact with the services.
 
 The application is containerized using Docker for easy deployment and management.
@@ -125,10 +125,10 @@ make test
 ```
 ├── backend         # Backend service (Flask app)
 │   └── app.py
-├── bmi_service     # BMI service (Flask app)
-│   └── app.py
-├── bmr_service     # BMR service (Flask app)
-│   └── app.py
+├── bmi_service     # BMI service
+│   └── bmi.py
+├── bmr_service     # BMR service
+│   └── bmr.py
 ├── frontend        # Frontend application (HTML/JavaScript)
 │   └── index.html
 ├── Dockerfile      # Dockerfile to build the application image
@@ -136,5 +136,5 @@ make test
 ├── README.MD       # This README file
 ├── requirements.txt # Python dependencies
 └── test            # Test scripts
-    └── app.py
+    └── test.py
 ```
