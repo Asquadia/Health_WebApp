@@ -1,0 +1,31 @@
+# You can override the included template(s) by including variable overrides
+# SAST customization: https://docs.gitlab.com/ee/user/application_security/sast/#customizing-the-sast-settings
+# Secret Detection customization: https://docs.gitlab.com/ee/user/application_security/secret_detection/pipeline/#customization
+# Dependency Scanning customization: https://docs.gitlab.com/ee/user/application_security/dependency_scanning/#customizing-the-dependency-scanning-settings
+# Container Scanning customization: https://docs.gitlab.com/ee/user/application_security/container_scanning/#customizing-the-container-scanning-settings
+# Note that environment variables can be set in several places
+# See https://docs.gitlab.com/ee/ci/variables/#cicd-variable-precedence
+image: docker:latest
+
+services:
+  - docker:dind
+
+variables:
+  DOCKER_IMAGE_NAME: my-health-app
+  DOCKER_CONTAINER_NAME: my-health-app-container
+
+stages:
+  - build
+  - test
+
+build_image:
+  stage: build
+  script:
+    - docker build -t $DOCKER_IMAGE_NAME .
+
+run_tests:
+  stage: test
+  script:
+    - make run_all
+    - make test
+    - make stop
