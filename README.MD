@@ -1,7 +1,9 @@
 # Health App Project
 
 This project is a microservice application that provides BMI and BMR calculation services. 
+
 The link to the azure web app page : https://healthwebapp-cpcwgpa9hsh3f6f6.francecentral-01.azurewebsites.net/
+
 It consists of three main components and a web interface:
 
 *   **Backend:** A Flask application that serves as the main entry point and handles routing requests to the appropriate service.
